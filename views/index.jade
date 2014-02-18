@@ -1,0 +1,45 @@
+extend mainLayout
+block content
+  div.ETA
+    div#video
+      video#localVideo
+      video#remoteVideo
+
+    div.control.localControl
+      div.inUse
+      div.bump
+      div.buttons
+        div.btn-toolbar
+          div.input-append.btn-group
+            button(data-action="dock", data-direction="dock", title="The Dock button above will only dock ETA when she is with in range of her Dock. Please return to the area you started and click Dock then let ETA do the rest.").btn.btn-danger.dock
+              i.icon-stop.icon-white
+              | DOCK
+      div.buttons
+        div.btn-toolbar
+          div.btn-group
+            button(data-action="drive", data-direction="forward").btn
+              i.icon-arrow-up
+              |  or W - Forward
+            button(data-action="drive", data-direction="back").btn
+              i.icon-arrow-down
+              |  or S - Reverse
+          div.btn-group
+            button(data-action="rotate", data-direction="left").btn
+              i.icon-arrow-left
+              |  or A - Rotate Left
+            button(data-action="rotate", data-direction="right").btn
+              i.icon-arrow-right
+              |  or D - Rotate Right
+          div.speed 
+            p Speed -
+            select(name="speed")
+              option(value="200") 200 - Turtle
+              option(value="250", selected="selected") 250 - Snake
+              option(value="300") 300 - Rabbit
+      div.logMessages
+        div.currentCommand
+          p ETA is executing command:
+          div.content
+        div.previousCommand
+          p ETA processed these previous commands:
+          div.content

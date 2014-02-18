@@ -1,0 +1,44 @@
+{
+  "name": "iRobot-Create-Browser",
+  "description": "Remote control for your iRobot Create via your browser",
+  "version": "0.1.0",
+  "dependencies": {
+    "create-oi": "0.0.4",
+    "express": "3.4.0",
+    "csr-gen": "0.2.1",
+    "stylus": "0.37.0",
+    "nib": "1.0.1",
+    "path": "0.4.9",
+    "os": "0.0.14",
+    "open": "0.0.4",
+    "opentok": "0.3.4",
+    "socket.io": "0.9.16",
+    "node-static": "~0.7.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ndoty/iRobot-Create-Node-JS-Web-Control.git"
+  },
+  "keywords": [
+    "iRobot",
+    "Serial",
+    "Node",
+    "Socket.io",
+    "Jade",
+    "Express",
+    "Web",
+    "RTC",
+    "Web",
+    "Control"
+  ],
+  "author": "Nicholas Doty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndoty/iRobot-Create-Node-JS-Web-Control/issues"
+  }
+}
