@@ -20,7 +20,11 @@ $(document).ready(function () {
     });
 
     socket.on('BotBump', function (data) {
+        clearInterval(clearMessages);
         $('.bump').empty().append('<p>' + data + '</p>');
+        clearMessages = setInterval(function (){
+            $('.bump').empty();
+        },10000);
     });
 
     keymap = {
