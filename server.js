@@ -176,21 +176,21 @@
                 // turn based on which bumper sensor got hit
                 switch(bumperEvt.which) {
                     case 'forward':
-                        message = 'Obstacle was forward. '+ BOT_NAME + ' will back up some.';
+                        message += 'Obstacle was forward. '+ BOT_NAME + ' will back up some.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.drive(-150, 0);
                         Bot.wait(250);
                         break;
                     case 'left':
-                        message = 'Obstacle was on the left. ' + BOT_NAME + ' automatically turning right to avoid obstacle.';
+                        message += 'Obstacle was on the left. ' + BOT_NAME + ' automatically turning right to avoid obstacle.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(-speed); // turn right
                         Bot.wait(400);
                         break;
                     case 'right':
-                        message = 'Obstacle was on the right. ' + BOT_NAME + ' automatically turning left to avoid obstacle.';
+                        message += 'Obstacle was on the right. ' + BOT_NAME + ' automatically turning left to avoid obstacle.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(speed); // turn left
@@ -198,7 +198,7 @@
                         break;
                 }
                 Bot.drive(0, 0);
-                message = 'Repositioning Done! ' + BOT_NAME + ' Ready!';
+                message += 'Repositioning Done! ' + BOT_NAME + ' Ready!';
                 console.log(message);
                 connectedSocket.emit('BotBump', message);
                 // turn handler back on
