@@ -20,13 +20,14 @@ p {
 #video {
     position: relative;
     width: 480px;
+    height: 480px;
     margin: 0 auto;
 }
 
 #localVideo, #remoteVideo {
     position: absolute;
-    width: 480px;
-    height: 480px;
+    width: 100%;
+    height: 100%;
     box-shadow: 1px 1px 1px 3px #fff;
 }
 
