@@ -183,12 +183,12 @@
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(dir*speed);
-                        Bot.wait(2100); // time is in ms
+                        Bot.wait(750); // time is in ms
                         connectedSocket.emit('BotBump', BOT_NAME + ' done turning, ' + BOT_NAME + ' automatically driving forward slightly to ensure obstacle is avoided.');
                         // turn handler back on to ensure obstacle is avoided
                         Bot.on('bump', bumpHndlr);
                         Bot.drive(150, 0);
-                        Bot.wait(750);
+                        Bot.wait(500);
                         Bot.drive(0, 0);
                         break;
                     case 'left':
@@ -196,17 +196,18 @@
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(-speed); // turn right
-                        Bot.wait(1000);
+                        Bot.wait(500);
+                        Bot.drive(0, 0);
                         break;
                     case 'right':
                         message = 'Obstacle was on the right. ' + BOT_NAME + ' automatically turning left to avoid obstacle.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(speed); // turn left
-                        Bot.wait(1000);
+                        Bot.wait(500);
+                        Bot.drive(0, 0);
                         break;
                 }
-                Bot.stop();
                 message = 'Repositioning Done! ' + BOT_NAME + ' Ready!';
                 console.log(message);
                 connectedSocket.emit('BotBump', message);
