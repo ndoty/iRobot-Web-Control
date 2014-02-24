@@ -182,14 +182,14 @@
 
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
-                        Bot.rotate(dir*speed);
                         Bot.wait(750); // time is in ms
                         connectedSocket.emit('BotBump', BOT_NAME + ' done turning, ' + BOT_NAME + ' automatically driving forward slightly to ensure obstacle is avoided.');
                         // turn handler back on to ensure obstacle is avoided
                         Bot.on('bump', bumpHndlr);
                         Bot.drive(150, 0);
-                        Bot.wait(500);
+                        Bot.wait(250);
                         Bot.drive(0, 0);
+                        connectedSocket.emit('BotBump', BOT_NAME + ' avoided obstacle, You should be positioned to drive now.');
                         break;
                     case 'left':
                         message = 'Obstacle was on the left. ' + BOT_NAME + ' automatically turning right to avoid obstacle.';
