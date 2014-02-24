@@ -12,8 +12,8 @@
         //https                   = require('http'),
         path                    = require('path'),
         os                      = require('os'),
-        exec = require('child_process').exec
-        //open                    = require('open'),
+        childProcess            = require('child_process'),
+        open                    = require('open'),
         ifaces                  = os.networkInterfaces(),
         io,
         app,
@@ -98,6 +98,10 @@
             console.log('Remote Control page for ' + BOT_NAME + ' located at http://' + IP + ":" + app.get('port') + '/control  ');
 
             console.log('A browser will appear in ' + timer + ' seconds to initiate video stream for ' + BOT_NAME + '.');
+
+            /*setTimeout(function () {
+                childProcess.exec('start chrome --kiosk "http://localhost:' + app.get('port') + '"');
+            }, timer * 1000); //1000 as setIntervel is in milleseconds*/
 
             setTimeout(function () {
                 open('http://localhost:' + app.get('port'));
