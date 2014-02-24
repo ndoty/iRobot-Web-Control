@@ -101,7 +101,7 @@
 
             setTimeout(function () {
                 var url = 'http://localhost:' + app.get('port');
-                childProcess.exec('start chrome --kiosk ' + url);
+                childProcess.exec(start chrome --kiosk url);
             }, timer * 1000); //1000 as setIntervel is in milleseconds
 
             io.sockets.on('connection', function (socket) {
