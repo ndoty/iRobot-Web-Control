@@ -206,6 +206,7 @@
                         Bot.wait(1000);
                         break;
                 }
+                Bot.stop();
                 message = 'Repositioning Done! ' + BOT_NAME + ' Ready!';
                 console.log(message);
                 connectedSocket.emit('BotBump', message);
