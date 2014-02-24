@@ -12,7 +12,8 @@
         //https                   = require('http'),
         path                    = require('path'),
         os                      = require('os'),
-        open                    = require('open'),
+        child_process           = require('child_process'),
+        //open                    = require('open'),
         ifaces                  = os.networkInterfaces(),
         io,
         app,
@@ -99,7 +100,8 @@
             console.log('A browser will appear in ' + timer + ' seconds to initiate video stream for ' + BOT_NAME + '.');
 
             setTimeout(function () {
-                open('http://localhost:' + app.get('port'));
+                var url = 'http://localhost:' + app.get('port');
+                childProcess.exec('start chrome --kiosk ' + url);
             }, timer * 1000); //1000 as setIntervel is in milleseconds
 
             io.sockets.on('connection', function (socket) {
