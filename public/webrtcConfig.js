@@ -11,9 +11,8 @@ var webrtc = new SimpleWebRTC({
 webrtc.on('readyToCall', function () {
   // you can name it anything
   webrtc.joinRoom('QL ETA Telepresence Robot Stream');
-  $.animateVideo();
 });
 
-$().bind("DOMSubtreeModified",function(){
-  alert('changed');
+$('#remoteVideo').bind("DOMSubtreeModified",function(){
+  $.animateVideo();
 });

@@ -84,17 +84,10 @@
                 if (!BotLocal) {
                     BotLocal = true; //once local is connected set it so another is unable display the default page.
                     res.render('index');
-                } else {
-                    res.render('local'); //Even though a local connection is there display something to keep user informed
-                }
-            });
-
-            app.get('/control', function (req, res) {
-                //Only allow one connection at a time.
-                if (!userConnected) {
+                } else if (BotLocal && !userConnected) {  //Only allow one connection at a time.
                     userConnected = true; //once user is connected set it so another is unable display the default page.
                     res.render('control');
-                } else {
+                } else if (BotLocal && userConnected) {
                     res.render('multiple'); //Even though a user connection is there display something to keep user informed
                 }
             });
