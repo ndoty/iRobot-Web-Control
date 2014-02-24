@@ -81,12 +81,12 @@
             server.listen(app.get('port'));
 
             app.get('/', function (req, res) {
-                    if (!BotLocal) {
-                        BotLocal = true; //once local is connected set it so another is unable display the default page.
+                    //if (!BotLocal) {
+                        //BotLocal = true; //once local is connected set it so another is unable display the default page.
                         res.render('index');
-                    } else {
+                    //} else {
                         res.render('local'); //Even though a local connection is there display something to keep user informed
-                    }
+                    //}
                 });
             });
 
