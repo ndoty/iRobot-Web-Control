@@ -3,51 +3,54 @@ body {
 }
 
 .stuff {
-	color: red;
+    color: red;
 }
 
 p {
-	color: black;
+    color: black;
 }
 .headline, .buttons, .logMessages, p {
-	text-align: center;
+    text-align: center;
 }
 
 #videoStream div {
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 #video {
-	position: relative;
-	height: 480px;
-	width: 480px;
-	margin: 0 auto;
+    position: relative;
+    height: 480px;
+    width: 480px;
+    margin: 0 auto;
 }
 
 #localVideo, #remoteVideo {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	box-shadow: 1px 1px 1px 3px #fff;
+    position: absolute;
+    box-shadow: 1px 1px 1px 3px #fff;
+}
+
+#localVideo video, #remoteVideo video {
+    width: 100%;
+    height: 100%;
 }
 
 .logMessages .currentCommand {
-	float: left;
+    float: left;
 }
 
 .logMessages .currentCommand .content {
-	color: green;
+    color: green;
 }
 
 .logMessages .previousCommand .content {
-	color: #666;
+    color: #666;
 }
 
 .speed p {
-	font-size: 15px;
-	margin: 10px 0 0 0;
+    font-size: 15px;
+    margin: 10px 0 0 0;
 }
 
 .localControl {
-	display: none;
+    display: none;
 }
