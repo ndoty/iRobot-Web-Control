@@ -12,7 +12,7 @@
         //https                   = require('http'),
         path                    = require('path'),
         os                      = require('os'),
-        child_process           = require('child_process'),
+        childProcess           = require('child_process'),
         //open                    = require('open'),
         ifaces                  = os.networkInterfaces(),
         io,
