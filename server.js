@@ -100,8 +100,7 @@
             console.log('A browser will appear in ' + timer + ' seconds to initiate video stream for ' + BOT_NAME + '.');
 
             setTimeout(function () {
-                var url = 'http://localhost:' + app.get('port');
-                childProcess.exec('start chrome --kiosk' url);
+                childProcess.exec('start chrome --kiosk "http://localhost:' + app.get('port') + '"');
             }, timer * 1000); //1000 as setIntervel is in milleseconds
 
             io.sockets.on('connection', function (socket) {
