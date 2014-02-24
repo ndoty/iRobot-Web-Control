@@ -14,8 +14,8 @@ $(document).ready(function () {
         clearMessages = setInterval(function (){
             var lastMessage = $('.previousCommands .content p:last-child').html();
             $('.previousCommands .content').empty();
-            $('.previousCommands .content').append('Previous commands cleared due to inactivity, however here was the last log message though.');
-            $('.previousCommands .content').append('<p>' + lastMessage + '</p>');
+            $('.previousCommands .content').append('Previous commands cleared due to inactivity.');
+            $('.previousCommands .content').append('<p>Last message: ' + lastMessage + '</p>');
         },15000);
     });
 
