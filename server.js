@@ -176,38 +176,28 @@
                 // turn based on which bumper sensor got hit
                 switch(bumperEvt.which) {
                     case 'forward':
-                        var dir = [-1,1][Math.round(Math.random())];// randomly choose a direction
-
-                        message = 'Obstacle was forward. '+ BOT_NAME + ' will automatically randomly turn to avoid obstacle.';
-
+                        message = 'Obstacle was forward. '+ BOT_NAME + ' will back up some.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
-                        Bot.wait(750); // time is in ms
-                        connectedSocket.emit('BotBump', BOT_NAME + ' done turning, ' + BOT_NAME + ' automatically driving forward slightly to ensure obstacle is avoided.');
-                        // turn handler back on to ensure obstacle is avoided
-                        Bot.on('bump', bumpHndlr);
-                        Bot.drive(150, 0);
+                        Bot.drive(-150, 0);
                         Bot.wait(250);
-                        Bot.drive(0, 0);
-                        connectedSocket.emit('BotBump', BOT_NAME + ' avoided obstacle, You should be positioned to drive now.');
                         break;
                     case 'left':
                         message = 'Obstacle was on the left. ' + BOT_NAME + ' automatically turning right to avoid obstacle.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(-speed); // turn right
-                        Bot.wait(500);
-                        Bot.drive(0, 0);
+                        Bot.wait(400);
                         break;
                     case 'right':
                         message = 'Obstacle was on the right. ' + BOT_NAME + ' automatically turning left to avoid obstacle.';
                         console.log(message);
                         connectedSocket.emit('BotBump', message);
                         Bot.rotate(speed); // turn left
-                        Bot.wait(500);
-                        Bot.drive(0, 0);
+                        Bot.wait(400);
                         break;
                 }
+                Bot.drive(0, 0);
                 message = 'Repositioning Done! ' + BOT_NAME + ' Ready!';
                 console.log(message);
                 connectedSocket.emit('BotBump', message);
