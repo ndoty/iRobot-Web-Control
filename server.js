@@ -18,7 +18,7 @@
         io,
         app,
         server,
-        networkCard             = 'Wireless Network Connection',
+        networkCard             = 'Wireless Network Connection 2',
         IP,
         BotLocal                = false,
         userConnected           = false,
