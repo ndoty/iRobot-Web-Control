@@ -12,7 +12,7 @@
     "os": "0.0.14",
     "open": "6.0.0",
     "opentok": "0.3.4",
-    "socket.io": "0.9.16",
+    "socket.io": "2.4.0",
     "node-static": "~0.7.1"
   },
   "scripts": {
